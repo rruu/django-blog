@@ -1,0 +1,4 @@
+Django==1.11.8
+django-tinymce4-lite==1.7.0
+jsmin==2.2.2
+pytz==2017.3
