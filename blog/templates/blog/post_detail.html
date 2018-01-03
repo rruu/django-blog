@@ -3,9 +3,9 @@
 {% load humanize %}
     <div class="post">
 
-
         {% if user.is_authenticated %}
         <a class="btn btn-default" href="{% url 'post_edit' slug=post.slug %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default confirmation" href="{% url 'post_delete' slug=post.slug %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
 
         <h1>{{ post.title }}</h1>
@@ -13,14 +13,28 @@
             <div class="date">
                 {{ post.published_date|naturaltime }}
             </div>
-
             <div class="tag">
                 {{ post.tag }}
             </div>
 
+       <!-- JS dependencies -->
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+       <!-- bootbox code -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+       <script>
+       $('.confirmation').on('click', function (e) {
+         e.preventDefault();
+         href = $(this).attr('href');
+         return bootbox.confirm('Are you sure?', function(result) {
+           if (result) {
+             window.location = href
+           }
+         });
+       });
+       </script>
         {% endif %}
-
         {{ post.text|safe }}
-
     </div>
 {% endblock %}

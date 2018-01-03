@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from tinymce import HTMLField
+import pytils
 
 #from django.template.defaultfilters import slugify
 #from autoslug import AutoSlugField
@@ -18,6 +19,14 @@ class Post(models.Model):
     text = HTMLField('Text')
 
     slug = models.SlugField(max_length=100, unique=True)
+    def __unicode__(self):
+        return self.title
+    def save(self, **kwargs):
+        if not self.id:
+            self.slug = pytils.translit.slugify(self.title)
+        return super(Post, self).save(**kwargs)
+
+    #slug = models.SlugField(max_length=100, populate_from='title', unique=True, db_index=True)
 
     def publish(self):
         self.published_date = timezone.now()
