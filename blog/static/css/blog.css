@@ -1,60 +1,50 @@
 body {
-    padding-left: 15px;
+  	background: #fff !important;
+/*    width: 100%;
+    height: 100%; */
+    margin-top: 60px;
 }
 
 h1 a {
-    color: #FCA205;
+    color: black;
 }
 
-
-@import "bourbon";
-
-body {
-	background: #fff !important;
-}
-
-.wrapper {
-	margin-top: 80px;
-  margin-bottom: 80px;
-}
-
+/* login form */
 .form-signin {
-  max-width: 380px;
-  padding: 15px 35px 45px;
-  margin: 0 auto;
+  max-width: 400px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
   background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 50px;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
+}
 
-  .form-signin-heading,
-	.checkbox {
-	  margin-bottom: 30px;
-	}
-
-	.checkbox {
-	  font-weight: normal;
-	}
-
-	.form-control {
-	  position: relative;
-	  font-size: 16px;
-	  height: auto;
-	  padding: 10px;
-		@include box-sizing(border-box);
-
-		&:focus {
-		  z-index: 2;
-		}
-	}
-
-	input[type="text"] {
-	  margin-bottom: -1px;
-	  border-bottom-left-radius: 0;
-	  border-bottom-right-radius: 0;
-	}
-
-	input[type="password"] {
-	  margin-bottom: 20px;
-	  border-top-left-radius: 0;
-	  border-top-right-radius: 0;
-	}
+.center-div
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 200px;
+  background-color: #ccc;
+  border-radius: 3px;
 }
