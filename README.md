@@ -9,6 +9,8 @@ passw: Zuonoh7O
 - [x] Add wysiwyg editor
 - [x] Add tags
 - [x] Humanize date
-- [ ] Sort and count in 'post_list'
-- [ ] Friendly URLs
+- [x] Friendly URLs
+- [ ] Add pagination
+- [ ] Add category or tag in URLs
 - [ ] Design?
+- [ ] Add oauth2
